@@ -1,0 +1,9 @@
+
+public class CustomerAccount extends Account{
+
+	public CustomerAccount(String userName, String firstName, String lastName, String email, String location) {
+		super(userName, firstName, lastName, email, location);
+		// TODO Auto-generated constructor stub
+	}
+
+}
