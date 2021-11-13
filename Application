@@ -3,8 +3,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); 
-		CustomerAccount cAccount;
-		BusinessAccount bAccount;
+		Account account;
 		
 		System.out.println("Welcome to PlaceHolderName" + "\nPlease Create an Account");
 		String[] options = {"Customer", "Business"};
@@ -28,12 +27,12 @@ public class Application {
 		System.out.println("Please Enter Your Location: ");
 		String location = input.nextLine();
 		if (type == AccountType.CUSTOMER) {
-			cAccount = new CustomerAccount(userName, firstName, secondName, email, location);
+			account = new CustomerAccount(userName, firstName, secondName, email, location);
 		}
 		if (type == AccountType.BUSINESS) {
 			System.out.println("Please Enter Your Company");
 			String company = input.nextLine();
-			bAccount = new BusinessAccount(userName, firstName, secondName, email, location, company);
+			account = new BusinessAccount(userName, firstName, secondName, email, location, company);
 		}
 	}
 
