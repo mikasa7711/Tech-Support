@@ -1,0 +1,19 @@
+
+public enum AccountType {
+	
+	CUSTOMER(0), BUSINESS(1);
+	
+	private int bNum;
+	private String accountType[] = {"Customer Account",
+									"Business Account"};
+	
+	private AccountType(int number) {
+		bNum = number;
+	}
+	
+	public String toString() {
+		return accountType[bNum];
+	}
+
+
+}
