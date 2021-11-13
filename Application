@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Application {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in); 
+		CustomerAccount cAccount;
+		BusinessAccount bAccount;
+		
+		System.out.println("Welcome to PlaceHolderName" + "\nPlease Create an Account");
+		String[] options = {"Customer", "Business"};
+		Menu busiOrCust = new Menu ("Are you a customer or a business?", options );
+		int choice = busiOrCust.getUserChoice();
+		AccountType type = null;
+		if (choice == 1) {
+			type = AccountType.CUSTOMER;
+		}
+		if (choice == 2) {
+			type = AccountType.BUSINESS;
+		}
+		System.out.println("Please Enter Your Username: ");
+		String userName = input.nextLine();
+		System.out.println("Please Enter Your First Name: ");
+		String firstName = input.nextLine();
+		System.out.println("Please Enter Your Surname: ");
+		String secondName = input.nextLine();
+		System.out.println("Please Enter Your Email: ");
+		String email = input.nextLine();
+		System.out.println("Please Enter Your Location: ");
+		String location = input.nextLine();
+		if (type == AccountType.CUSTOMER) {
+			cAccount = new CustomerAccount(userName, firstName, secondName, email, location);
+		}
+		if (type == AccountType.BUSINESS) {
+			System.out.println("Please Enter Your Company");
+			String company = input.nextLine();
+			bAccount = new BusinessAccount(userName, firstName, secondName, email, location, company);
+		}
+	}
+
+}
